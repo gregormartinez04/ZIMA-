@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ZIMA acompaña a negocios que quieren crecer mediante estrategia, posicionamiento de marca y crecimiento digital.">
+  <title>ZIMA — Estrategia, marca y crecimiento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #243e33;
+      --forest-light: #365647;
+      --ivory: #f8f6f0;
+      --beige: #ece7dc;
+      --sage: #c4d0bf;
+      --ink: #29332d;
+      --muted: #70776f;
+      --white: #fffefa;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #8da991;
+      outline-offset: 4px;
+    }
+    .container { width: min(1120px, 88%); margin: auto; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(248,246,240,.96);
+      border-bottom: 1px solid var(--beige);
+      backdrop-filter: blur(12px);
+    }
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .logo {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--forest);
+    }
+    .links { display: flex; align-items: center; gap: 25px; font-size: 13px; }
+    .links a:hover { color: var(--forest-light); }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--forest);
+      color: var(--white);
+      padding: 13px 22px;
+      border: 1px solid var(--forest);
+      border-radius: 3px;
+      font: 600 13px var(--sans);
+      transition: background .2s, transform .2s;
+    }
+    .button:hover { background: var(--forest-light); transform: translateY(-2px); }
+    .button-light { background: var(--ivory); color: var(--forest); border-color: var(--ivory); }
+    .button-light:hover { background: var(--sage); }
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+      color: var(--forest-light);
+    }
+    .hero { padding: 105px 0 100px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 65px;
+      align-items: center;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.18; }
+    h1 { font-size: clamp(44px, 5.7vw, 72px); letter-spacing: -2px; margin: 20px 0; }
+    h2 { font-size: clamp(34px, 4vw, 48px); margin-bottom: 22px; }
+    h3 { font-size: 25px; margin-bottom: 12px; }
+    .hero p { color: var(--muted); max-width: 500px; font-size: 16px; }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 30px; }
+    .text-link { font-size: 13px; font-weight: 600; }
+    .hero-art {
+      min-height: 440px;
+      border-radius: 48% 48% 4px 4px;
+      background: linear-gradient(150deg, #dce2d4, #b6c5b2 58%, #829985);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-art::before {
+      content: "";
+      width: 72%;
+      height: 82%;
+      position: absolute;
+      bottom: -10%;
+      left: 14%;
+      background: rgba(248,246,240,.48);
+      border-radius: 50% 50% 0 0;
+    }
+    .art-note {
+      z-index: 1;
+      background: var(--ivory);
+      padding: 24px;
+      width: 74%;
+      box-shadow: 0 18px 50px #243e3318;
+    }
+    .art-note span { color: var(--muted); font-size: 10px; letter-spacing: 2px; }
+    .art-note strong {
+      display: block;
+      font: 500 clamp(25px,3vw,36px)/1.3 var(--serif);
+      color: var(--forest);
+      margin-top: 12px;
+    }
+    section { padding: 95px 0; }
+    .intro { background: var(--forest); color: var(--ivory); }
+    .intro-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 75px; }
+    .intro .eyebrow { color: var(--sage); }
+    .intro h2 { max-width: 680px; }
+    .intro p { color: #d8dfd8; max-width: 650px; }
+    .section-heading { max-width: 650px; margin-bottom: 45px; }
+    .section-heading p { color: var(--muted); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .service {
+      padding: 30px 25px;
+      background: var(--white);
+      border: 1px solid var(--beige);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .service:hover { transform: translateY(-4px); box-shadow: 0 14px 30px #243e330c; }
+    .number { color: #829985; font-size: 12px; letter-spacing: 2px; }
+    .service h3 { margin-top: 28px; }
+    .service p { color: var(--muted); font-size: 14px; }
+    .method { background: var(--beige); }
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+    .step { border-top: 1px solid #9caa9b; padding-top: 20px; }
+    .step span { font-size: 11px; letter-spacing: 2px; color: var(--forest-light); }
+    .step h3 { font-size: 21px; margin: 15px 0 10px; }
+    .step p { color: #626a62; font-size: 13px; }
+    .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; align-items: center; }
+    .approach-panel {
+      background: var(--sage);
+      min-height: 330px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .approach-panel p { font: 500 32px/1.4 var(--serif); color: var(--forest); }
+    .approach-copy p { color: var(--muted); }
+    .cta { background: var(--forest); color: var(--ivory); text-align: center; }
+    .cta .eyebrow { color: var(--sage); }
+    .cta h2 { max-width: 730px; margin: 20px auto; }
+    .cta p { max-width: 560px; margin: 0 auto 30px; color: #d8dfd8; }
+    footer { padding: 35px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    footer p { margin: 0; color: var(--muted); font-size: 12px; }
+    @media (max-width: 800px) {
+      .links { gap: 12px; }
+      .links .optional { display: none; }
+      .hero { padding: 65px 0; }
+      .hero-grid, .intro-grid, .approach-grid { grid-template-columns: 1fr; gap: 35px; }
+      .hero-art { min-height: 310px; }
+      .intro-grid { gap: 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 70px 0; }
+    }
+    @media (max-width: 480px) {
+      .nav-inner { min-height: 66px; }
+      .logo { font-size: 27px; }
+      .links { gap: 12px; font-size: 12px; }
+      .links .optional { display: none; }
+      .links .button { padding: 10px 12px; font-size: 11px; }
+      h1 { letter-spacing: -1px; }
+      .steps { grid-template-columns: 1fr; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#inicio" aria-label="ZIMA, inicio">ZIMA.</a>
+      <nav class="links" aria-label="Navegación principal">
+        <a class="optional" href="#servicios">Servicios</a>
+        <a class="optional" href="#metodo">Método</a>
+        <a href="#nosotros">Nosotros</a>
+        <a class="button" href="#contacto">Diagnosticar mi negocio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Estrategia · Marca · Crecimiento</span>
+          <h1>Tu negocio no necesita más ruido. Necesita dirección.</h1>
+          <p>Acompañamos a negocios que ya venden a entender qué los está frenando y construir una estrategia clara para crecer.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contacto">Diagnosticar mi negocio</a>
+            <a class="text-link" href="#metodo">Conoce nuestro método ↗</a>
+          </div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Composición editorial en tonos naturales que representa claridad y crecimiento">
+          <div class="art-note">
+            <span>UNA NUEVA PERSPECTIVA</span>
+            <strong>Crecer comienza por entender.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="container intro-grid">
+        <div><span class="eyebrow">El punto de partida</span></div>
+        <div>
+          <h2>Vender no siempre significa estar creciendo.</h2>
+          <p>Puedes tener buenos clientes, un producto valioso y presencia digital, y aun así sentir que tu negocio no avanza. A veces no necesitas hacer más, sino identificar qué merece tu atención primero.</p>
+          <p>En ZIMA conectamos estrategia, marca y crecimiento para ayudarte a tomar mejores decisiones y avanzar con intención.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Cómo te acompañamos</span>
+          <h2>Tres áreas. Una dirección clara.</h2>
+          <p>Trabajamos en lo que tu negocio necesita, sin fórmulas genéricas ni acciones aisladas.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service">
+            <span class="number">01 / ESTRATEGIA</span>
+            <h3>Entender el negocio</h3>
+            <p>Clarificamos tus objetivos, tu propuesta de valor y las oportunidades que pueden impulsar un crecimiento sostenible.</p>
+          </article>
+          <article class="service">
+            <span class="number">02 / MARCA</span>
+            <h3>Encontrar tu lugar</h3>
+            <p>Fortalecemos tu posicionamiento para que las personas correctas entiendan qué te hace diferente y por qué elegirte.</p>
+          </article>
+          <article class="service">
+            <span class="number">03 / CRECIMIENTO DIGITAL</span>
+            <h3>Convertir intención en acción</h3>
+            <p>Conectamos tus canales, contenido y proceso comercial con objetivos concretos de captación y conversión.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="method" id="metodo">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">El método ZIMA</span>
+          <h2>Primero entendemos. Después avanzamos.</h2>
+          <p>Un proceso práctico que convierte las preguntas correctas en decisiones y acciones concretas.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><span>FASE 01</span><h3>Explorar</h3><p>Conocemos tu negocio, tus metas y los obstáculos que enfrentas.</p></article>
+          <article class="step"><span>FASE 02</span><h3>Analizar</h3><p>Evaluamos estrategia, marca, oferta, ventas y presencia digital.</p></article>
+          <article class="step"><span>FASE 03</span><h3>Identificar</h3><p>Separamos los síntomas de las causas y detectamos oportunidades.</p></article>
+          <article class="step"><span>FASE 04</span><h3>Orientar</h3><p>Definimos prioridades según impacto, recursos y objetivos.</p></article>
+          <article class="step"><span>FASE 05</span><h3>Activar</h3><p>Construimos una hoja de ruta medible para pasar a la acción.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros">
+      <div class="container approach-grid">
+        <div class="approach-panel">
+          <span class="eyebrow">Nuestra filosofía</span>
+          <p>Menos improvisación. Más claridad para crecer.</p>
+        </div>
+        <div class="approach-copy">
+          <span class="eyebrow">Sobre ZIMA</span>
+          <h2>Estrategia cercana. Decisiones con intención.</h2>
+          <p>Creemos que los negocios no necesitan hacerlo todo al mismo tiempo. Necesitan entender su situación, reconocer sus oportunidades y avanzar con un plan que tenga sentido para su realidad.</p>
+          <p>Por eso combinamos visión estratégica con acompañamiento práctico, adaptado a la etapa y los recursos de cada negocio.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <div class="container">
+        <span class="eyebrow">Tu siguiente paso</span>
+        <h2>Empieza por entender qué está frenando tu negocio.</h2>
+        <p>Conversemos sobre tu situación y exploremos qué necesita tu negocio para avanzar con más claridad.</p>
+        <!-- Sustituye el enlace de abajo por tu enlace real de WhatsApp cuando lo tengas. -->
+        <a class="button button-light" href="mailto:hola@zima.ec?subject=Quiero%20un%20diagn%C3%B3stico%20ZIMA">Hablemos de mi negocio ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="logo" href="#inicio">ZIMA.</a>
+      <p>Estrategia, marca y crecimiento.</p>
+      <p>© <span id="year">2026</span> ZIMA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
